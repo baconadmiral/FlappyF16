@@ -23,7 +23,6 @@ function Bird()
        this.rot += 0.02;
      }
     rotate(this.rot);
-    console.log(this.rot);
 
      image(this.image, -32, -10);
       //ellipse(this.x, this.y, this.birdWidth, this.birdWidth);

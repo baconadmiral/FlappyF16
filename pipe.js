@@ -21,13 +21,17 @@ function Pipe()
 
   this.hits = function(bird)
   {
+    if(!this.passed)
+    {
     if(bird.y < this.top || bird.y > this.bottom)
       {
         if(bird.x > this.x && bird.x < this.x + this.pipeWidth)
         {
+          this.passed = true;
           return true;
         }
       }
+    }
       return false;
   }
 
