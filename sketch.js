@@ -9,6 +9,7 @@ function setup() {
   score = 0;
   pipes.push(new Pipe());
   this.flappyBak = loadImage('flappybak.png');
+  //angleMode(DEGREES);
 }
 
 function draw() {
