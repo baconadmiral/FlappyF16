@@ -2,15 +2,17 @@ var bird;
 var pipes = [];
 var score;
 
+
 function setup() {
   createCanvas(400, 600);
   bird = new Bird();
   score = 0;
   pipes.push(new Pipe());
+  this.flappyBak = loadImage('flappybak.png');
 }
 
 function draw() {
-  background(0);
+  background(flappyBak);
 
   for(var i = pipes.length-1; i > 0; i--)
   {

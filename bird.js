@@ -1,5 +1,6 @@
 function Bird()
 {
+  this.image = loadImage('f16sprite.png');
   this.y = height/2;
   this.x = 100;
 
@@ -9,9 +10,9 @@ function Bird()
 
   this.showBird = function()
   {
-
-      fill(255);
-      ellipse(this.x, this.y, this.birdWidth, this.birdWidth);
+      image(this.image, this.x, this.y);
+      //fill(255);
+      //ellipse(this.x, this.y, this.birdWidth, this.birdWidth);
 
   }
 
