@@ -1,3 +1,5 @@
+//This is a pipe
+
 function Pipe()
 {
   this.gapYLoc = random(100, height-100);
