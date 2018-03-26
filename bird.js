@@ -56,5 +56,8 @@ function Bird()
 
   }
 
-
+  this.crash = function()
+  {
+    return this.y >= height;
+  }
 }

@@ -22,28 +22,35 @@ function setup() {
 function draw() {
   background(flappyBak);
 
+
+  textSize(32);
+  text('Score: ' + this.score + " High: " + this.highScore, 40, 30);
+  text('Tries: ' + this.tries, 40, 70);
+  fill(0, 102, 153, 51);
+
   if(!this.gameStarted)
   {
     pipes = [];
+    bird = new Bird();
     pipes.push(new Pipe());
     textSize(32);
-    text("Press Any Key to Start", 40, height/2);
     fill(0);
+    text("Press Any Key to Start", 40, height/2);
+    textSize(16);
+    text("(Hit Space or Click to Fly)", 100, height/2 + 20);
+
   }
 
   if(this.gameStarted)
   {
-    textSize(32);
-    text('Score: ' + this.score + " High: " + this.highScore, 40, 30);
-    text('Tries: ' + this.tries, 40, 70);
-    fill(0, 102, 153, 51);
+
 
     for(var i = pipes.length-1; i > 0; i--)
     {
       pipes[i].showPipe();
       pipes[i].update();
 
-      if(pipes[i].hits(bird))
+      if(pipes[i].hits(bird) || bird.crash())
       {
         this.gameStarted = false;
         this.highScore = this.score;
