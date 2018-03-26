@@ -8,7 +8,13 @@ var gameStarted;
 
 
 function setup() {
-  createCanvas(400, 600);
+  if(displayWidth > 400 && displayHeight > 600){
+    createCanvas(400, 600);
+  }
+  else {
+  createCanvas(displayWidth, displayHeight);
+  }
+
   bird = new Bird();
   this.score = 0;
   this.highScore = 0;
