@@ -8,12 +8,12 @@ var gameStarted;
 
 
 function setup() {
-  if(displayWidth > 400 && displayHeight > 600){
+  /*if(displayWidth > 400 && displayHeight > 600){
     createCanvas(400, 600);
   }
-  else {
+  else {*/
   createCanvas(displayWidth, displayHeight);
-  }
+  //}
 
   bird = new Bird();
   this.score = 0;
@@ -21,7 +21,7 @@ function setup() {
   this.tries = 0;
   this.crashes = 0;
   pipes.push(new Pipe());
-  this.flappyBak = loadImage('flappybak.png');
+  this.flappyBak = loadImage('images/flappybak.png');
   this.gameStarted = false;
 }
 
@@ -59,7 +59,10 @@ function draw() {
       if(pipes[i].hits(bird) || bird.crash())
       {
         this.gameStarted = false;
-        this.highScore = this.score;
+
+        if(this.score > this.highScore)
+          this.highScore = this.score;
+
         this.tries += 1;
         this.score = 0;
       }
@@ -96,8 +99,6 @@ function keyPressed()
   if(!this.gameStarted)
     this.gameStarted = true;
 
-  if(key == " ")
-  {
-    bird.bounce();
-  }
+  bird.bounce();
+
 }

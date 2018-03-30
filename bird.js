@@ -1,6 +1,14 @@
 function Bird()
 {
-  this.image = loadImage('f16sprite.png');
+  this.image1 = loadImage('images/aopspritebase1.png');
+  this.image2 = loadImage('images/aopspritebase2.png');
+  this.image3 = loadImage('images/aopspritebase3.png');
+  this.birdAnim = [];
+  this.birdAnim.push(this.image1);
+  this.birdAnim.push(this.image2);
+  this.birdAnim.push(this.image3);
+  this.animCtr = 0;
+
   this.y = height/2;
   this.x = 100;
 
@@ -24,7 +32,12 @@ function Bird()
      }
     rotate(this.rot);
 
-     image(this.image, -32, -10);
+    if(frameCount % 15 == 0)
+    {
+      this.animCtr += 1;
+      this.animCtr = this.animCtr % 3;
+    }
+    image(this.birdAnim[this.animCtr], -32, -10);
       //ellipse(this.x, this.y, this.birdWidth, this.birdWidth);
       //this.rot += 1;
   }
