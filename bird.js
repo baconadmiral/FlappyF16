@@ -38,8 +38,7 @@ function Bird()
       this.animCtr = this.animCtr % 3;
     }
     image(this.birdAnim[this.animCtr], -32, -10);
-      //ellipse(this.x, this.y, this.birdWidth, this.birdWidth);
-      //this.rot += 1;
+
   }
 
   this.update = function()
