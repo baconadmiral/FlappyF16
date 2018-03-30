@@ -11,9 +11,9 @@ function setup() {
   /*if(displayWidth > 400 && displayHeight > 600){
     createCanvas(400, 600);
   }
-  else {*/
+  else {
   createCanvas(displayWidth, displayHeight);
-  //}
+}*/
 
   bird = new Bird();
   this.score = 0;
@@ -23,6 +23,7 @@ function setup() {
   pipes.push(new Pipe());
   this.flappyBak = loadImage('images/flappybak.png');
   this.gameStarted = false;
+  stopGame();
 }
 
 function draw() {
@@ -88,9 +89,21 @@ function draw() {
 
 }
 
-
-function mouseClicked()
+function stopGame()
 {
+  console.log("noloop");
+  createCanvas(0, 0);
+  noLoop();
+}
+
+function startGame()
+{
+  console.log("start loop");
+  createCanvas(displayWidth, displayHeight);
+  loop();
+}
+
+function mousePressed() {
   keyPressed();
 }
 
