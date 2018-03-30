@@ -38,7 +38,7 @@ function Bird()
       this.animCtr = this.animCtr % 3;
     }
     image(this.birdAnim[this.animCtr], -32, -10);
-
+    //comment again
   }
 
   this.update = function()
